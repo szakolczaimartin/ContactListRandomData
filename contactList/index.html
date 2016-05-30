@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<header>
+<a href="index.html"><h1 >Click new random<h1></a>
+</header>
+
+<div id="results"></div>
+
+
+ <script>
+var results = document.getElementById('results');
+var r = new XMLHttpRequest();
+r.open("GET", "http://www.filltext.com?rows=5&pretty = true&fname={firstName}&lname={lastName}&city={city}&address={streetAddress}&email={email}&phone={phone}", true);
+r.onreadystatechange = function () {
+  if (r.readyState != 4 || r.status != 200) return;
+  var data = JSON.parse(r.responseText);
+  for (var i in data){
+		
+		results.innerHTML +='<li> First name: <span>'+data[i].fname+'</span> </li>'
+		results.innerHTML +='<li> Last name: <span>'+ data[i].lname+'</span> </li>'
+		results.innerHTML +='<li> City: <span>'+ data[i].city+'</span> </li>'
+		results.innerHTML +='<li> Address: <span>'+ data[i].address+'</span> </li>'
+		results.innerHTML +='<li> Email: <span>'+ data[i].email+'</span> </li>'
+		results.innerHTML +='<li> Phone number: <span>'+ data[i].phone+'</span> </li>'
+		
+		results.innerHTML +='<br>'
+	
+  }
+};
+r.send();
+
+ 
+ </script>
+</body>
+</html>

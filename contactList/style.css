@@ -1,0 +1,31 @@
+
+body{
+	background-color: yellow;
+}
+
+#results{
+	background-color: ;
+	
+    position: absolute;
+    top: 100px;
+    right: 550px;
+    width: 270px;
+    font-weight: bold;
+	border: 10px solid #ffff66;
+
+	background-color:  #ffffb3;
+}
+
+#results span{
+	
+	font-weight: normal;
+	 font-family: cursive;
+
+}
+
+header{
+	
+	text-align: center;
+	font-family: cursive;
+	
+}
